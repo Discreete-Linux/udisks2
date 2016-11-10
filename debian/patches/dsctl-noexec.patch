@@ -1,0 +1,13 @@
+Index: udisks2-2.1.3/src/udiskslinuxfilesystem.c
+===================================================================
+--- udisks2-2.1.3.orig/src/udiskslinuxfilesystem.c
++++ udisks2-2.1.3/src/udiskslinuxfilesystem.c
+@@ -726,7 +726,7 @@ calculate_mount_options (UDisksDaemon
+   options_to_use = prepend_default_mount_options (fsmo, caller_uid, options);
+ 
+   /* validate mount options */
+-  str = g_string_new ("uhelper=udisks2,nodev,nosuid");
++  str = g_string_new ("uhelper=udisks2,nodev,nosuid,noexec");
+   for (n = 0; options_to_use[n] != NULL; n++)
+     {
+       const gchar *option = options_to_use[n];
